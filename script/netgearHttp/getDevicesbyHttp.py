@@ -32,7 +32,7 @@ DevURL = "http://<MyRouterIP>/DEV_device.htm"
 hrouteur = httplib2.Http(".cache")
 hjeedom = httplib2.Http(".cache")
 
-hrouteur.add_credentials('login', 'password') # Basic authentication
+hrouteur.add_credentials('login', 'password') # Basic authentication set YOUR login password 
 
 resp, content = hrouteur.request(DevURL, "GET", body="foobar")
 
