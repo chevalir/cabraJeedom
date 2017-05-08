@@ -1,0 +1,41 @@
+@startuml
+node "Jeedom" {
+  component "plugins Virtuel" as virtuel {
+    [Equipement A] as devA
+    [Equipement B] as devB
+  }
+
+  component "scenario" as scenario {
+    [updateStatus] as scenarioUpdate
+  }
+  component "Plugins Ping" as pingPlugins {
+    [Ping device A] as pingA
+  }
+  component "Plugins Scrip" as scriptPlugins {
+    [Script updateStatus] as scripUpdate
+  }
+
+  scenarioUpdate --> pingA
+  scenarioUpdate --> scripUpdate
+  [cron] --> scenarioUpdate
+}
+
+
+cloud {
+  webApp - [Routeur]
+  [Other devices] as others
+}
+
+
+node "OS" {
+  [python Netgear script] AS python #Pink
+  [shell script] as shell 
+  shell --> python
+  python -up-> webApp :http or soap
+  python -left-> devA:http
+  python -left-> devB:http
+  pingA -up-> others : ping
+}
+
+scripUpdate --> shell :call
+@enduml
