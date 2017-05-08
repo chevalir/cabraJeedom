@@ -13,7 +13,7 @@ from collections import namedtuple
 # commands ID the set the state on or off.  
 #   
 #                     MacID            OFF  ON   setIP   Name
-DevicesMng = {'B4:88:P8:85:O6:5P' : (8809, 8808, 8884, 	'iPhone B')
+devicesMng = {'B4:88:P8:85:O6:5P' : (8809, 8808, 8884, 	'iPhone B')
          		, 'B8:O7:5P:A5:5O:8E' : (8844, 8840, 8880, 	'iPod')
          		, 'EO:05:86:4B:59:00' : (8858, 8888, 8886,	'iMac Wifi')
          		, '80:PP:B8:B4:48:9O' : (5805, 5804, 5806,	'iMac')
