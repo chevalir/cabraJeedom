@@ -71,7 +71,7 @@ def main():
 	except:
 		print "first call"
 	# uncomment to force reset of list or delete manualy the file
-	devStatus = {}
+	# devStatus = {}
 	
 	devicesListURL = "http://"+routerIP+"/DEV_device.htm"
 	hrouteur = httplib2.Http(".cache")
@@ -116,7 +116,7 @@ def main():
 	
 	send = False;
 	for key, (off, on, setip, name) in devicesMng.items():
-		send = False
+		send = True
 		listDevByName = [dev for dev in connectedDev if dev.mac == key]
 		# print dev.mac,dev.name, key
 		if len(listDevByName) > 0:
@@ -125,15 +125,15 @@ def main():
 			else:
 				send = True
 			devStatus[key] = (name, True)		
-				
+			print ("listDevByName > 0")	
 		else:
 			if key in devStatus:
 				send = devStatus[key][1]
-				devStatus[key] = (name, False)
+			devStatus[key] = (name, False)
 		############## Call jeedom command if required
 		#print send 
 		if send & (key in devicesMng):
-			CommandURL = jBaseURL + "&type=cmd&id=%d" % devicesMng[key][False ==devStatus[key][1]]
+			CommandURL = jBaseURL + "&type=cmd&id=%d" % devicesMng[key][False == devStatus[key][1]]
 			#print name, devicesMng[key][False == devStatus[key][1]]
 			jresp, jcontent = hjeedom.request(CommandURL, "GET", body="foobar")
 			time.sleep(0.1)
