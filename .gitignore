@@ -1,2 +1,11 @@
 **/test
 **/.cache
+.DS_Store
+script/test.py
+script/test.txt
+script/UploadBackup.sh
+script/BureauPremierLampePulse.sh
+script/getDevicesByGenie.py
+script/getDevicesbyHttp.py
+script/getDevicesbyHttpV1.py
+script/updateIPstatus.py
