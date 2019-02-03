@@ -1,0 +1,12 @@
+
+script/test/.cache/192.168.1.1,DEV_device.htm,ca61d8510240897682714c78949105af
+script/test/.cache/192.168.1.1,LGO_logout.htm,991c8364d72a5fa04b36956e7c5b30f1
+script/test/.cache/192.168.1.1,USB_adv.htm,d463377c4d61ce10b539865f66dac2e0
+script/test/.cache/www.fioulreduc.com,prix-fioul,c76e90b9e22f52a3a677cb1cecc940c1
+*.DS_Store
+*test*
+script/test/iplist.json
+*.cache
+script/BureauPremierLampePulse.sh
+script/getDevicesbyHttp.py
+script/getDevicesByGenie.py
